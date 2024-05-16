@@ -1,0 +1,89 @@
+.game_inner__left .buttons {
+			  float: right;
+			  padding: 50px;
+			}
+			.game_inner__left .buttons img {
+			  width: 32px;
+			  float: left;
+			  margin-left: 12px;
+			  cursor: pointer;
+			}
+			.game_inner__left .buttons img.off {
+			  opacity: 0.3;
+			}
+			.game_inner__left .logo {
+			  padding: 50px;
+			  float: left;
+			}
+			.game_inner__left .ui {
+			  width: 100%;
+			}
+			.game_inner__left .ui_spaces {
+			  font-size: 24px;
+			  margin-bottom: 7px;
+			}
+			.game_inner__left .ui_progress {
+			  width: 500px;
+			  margin: 0 auto;
+			  text-align: left;
+			  position: absolute;
+			  top: calc(50% - 300px);
+			  left: 0;
+			  right: 0;
+			  margin: auto;
+			}
+			.game_inner__left .ui_progress__stage {
+			  font-size: 9px;
+			  margin-bottom: 11px;
+			}
+			.game_inner__left .ui_progress__bar {
+			  width: 100%;
+			  position: relative;
+			}
+			.game_inner__left .ui_progress__bar .inner {
+			  background: url("https://assets.codepen.io/217233/ktkProgressInner.png");
+			  height: 7px;
+			  width: calc(100% - 6px);
+			  background-size: 494px 7px;
+			  position: absolute;
+			  top: 10px;
+			  z-index: 1;
+			  left: 3px;
+			  transition: all 0.4s;
+			  max-width: 494px;
+			}
+			.game_inner__left .ui_progress__bar .outer {
+			  background: url("https://assets.codepen.io/217233/ktkProgressOuter.png");
+			  height: 12px;
+			  width: 100%;
+			  background-size: 500px 12px;
+			  position: absolute;
+			  top: 8px;
+			}
+			.game_inner__left .ui_progress__icons {
+			  display: flex;
+			  justify-content: space-between;
+			  position: relative;
+			  z-index: 1;
+			  padding: 0 14px;
+			}
+			.game_inner__left .ui_progress__icons .icon {
+			  flex-grow: 1;
+			  text-align: center;
+			}
+			.game_inner__left .ui_progress__icons .icon_bg {
+			  width: 28px;
+			  height: 28px;
+			  margin: auto;
+			  background: url("https://assets.codepen.io/217233/ktkStageLocked.png");
+			}
+			.game_inner__left .ui_progress__icons .icon_bg.active:after {
+			  width: 10px;
+			  height: 10px;
+			  content: "▲";
+			  display: block;
+			  position: relative;
+			  top: 31px;
+			  left: 9px;
+			  font-size: 10px;
+			}
