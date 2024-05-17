@@ -1,0 +1,39 @@
+ startGame() {
+		      this.gameStarted = true;
+		      lowpassNode.frequency.value = 15000;
+		      this.canAttack = true;
+		
+		      timer = setInterval(function () {
+		        _this.tooltipTimer++;
+		
+		        if (_this.minutes == 0 && _this.seconds == 0 && _this.ms == 0) {
+		          // Show game over!
+		          window.clearInterval(timer);
+		          _this.gameover = true;
+		          _this.canAttack = false;
+		        }
+		
+		        if (_this.tooltipTimer > 100) {
+		          _this.tooltip = true;
+		        }
+		        if (_this.ms > 0) {
+		          _this.ms--;
+		          if (_this.ms < 10) {
+		            _this.ms = "0" + _this.ms;
+		          }
+		        } else {
+		          _this.ms = 99;
+		          if (_this.seconds < 1) {
+		            _this.seconds = 59;
+		            _this.minutes--;
+		            _this.minutes = "0" + _this.minutes;
+		          } else {
+		            _this.seconds--;
+		            if (_this.seconds < 10) {
+		              _this.seconds = "0" + _this.seconds;
+		            }
+		          }
+		        }
+		      }, 10);
+		    }
+		  },
