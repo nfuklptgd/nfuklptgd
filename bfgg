@@ -1,0 +1,4 @@
+QWebEngineView *webView = new QWebEngineView(parent);
+// ... 进行视图初始化及加载URL等操作 ...
+// 当需要刷新页面时
+webView->reload();
