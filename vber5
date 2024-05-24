@@ -1,0 +1,24 @@
+/**
+ * 解析CSV文件
+ * @param csvFormat CSV格式设置
+ * @return List<User>
+ */
+public static List<User> readCsv(CSVFormat csvFormat){
+    List<User> users = new ArrayList<>();
+    try(FileReader fileReader = new FileReader("ApacheCsv.csv");
+        CSVParser csvParser = new CSVParser(fileReader, csvFormat)){
+        csvParser.getRecords().forEach( csvRecord ->{
+            System.out.println(csvRecord.toString());
+            Integer id = Integer.valueOf(csvRecord.get(0));
+            String name = csvRecord.get(1);
+            String gender = csvRecord.get(2);
+            User user = new User(id, name, gender);
+            users.add(user);
+        });
+        users.forEach(System.out::println);
+    }catch (IOException e) {
+        e.printStackTrace();
+
+    }
+    return users;
+}
