@@ -1,0 +1,27 @@
+//css部分：
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  color: #333333;
+  font-size: 16px;
+  border: 1px solid #a4a4a4;
+  display: inline-block;
+}
+
+ul li {
+  /* 
+        display:inline-block可以让一个块元素和行内元素在同一行显示
+        具有想同属性的块元素也可以并排显示
+    */
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 60px;
+}
+
+ul li.current {
+  color: #ffffff;
+  background-color: #0091ff;
+}
+
