@@ -1,0 +1,11 @@
+// 如果在访问接口时，遇到了http请求被重定向到https的问题，可以删掉https的配置
+"Kestrel": {
+  "Endpoints": {
+    "Http": {
+      "Url": "http://*:5000"
+    },
+    "Https": {
+      "Url": "https://*:5001"
+    }
+  }
+}
