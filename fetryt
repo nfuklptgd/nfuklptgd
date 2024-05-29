@@ -1,0 +1,15 @@
+module.exports = {
+    // 其他配置...
+    devServer: {
+        proxy: {
+            [process.env.VUE_APP_BASE_API]: {
+                target: 'http://xxxx', // 代理跨域目标接口
+                ws: true,
+                changeOrigin: true,
+                pathRewrite: {
+                    ['^' + process.env.VUE_APP_BASE_API]: ''
+                }
+            }
+        }
+    }
+}
