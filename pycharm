@@ -1,0 +1,10 @@
+#include <QtCharts>
+#include <QtCharts/qsplineseries.h>
+ 
+private:
+    QChart *chart;
+	QSplineSeries *series;
+    QChartView *chartview;
+ 
+private slots:
+	void MainWindow::Timeout_handler();
