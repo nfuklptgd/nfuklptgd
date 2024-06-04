@@ -1,0 +1,7 @@
+# 进入 open-webui 目录
+cd /volume1/docker/open-webui
+
+# 将 docker-compose.yml 放入当前目录
+
+# 一键启动
+docker-compose up -d
