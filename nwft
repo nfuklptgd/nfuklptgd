@@ -1,0 +1,6 @@
+onMounted(() => {
+        handleQuery({
+              page: pagination.value.current,
+              size: pagination.value.pageSize,
+            });
+      });
