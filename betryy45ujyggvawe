@@ -1,0 +1,21 @@
+ function reset() {
+    w = window.innerWidth;
+    h = window.innerHeight;
+    renderer.resize(w, h);
+    waveGraphics = null;
+    waveTexture = null;
+    partGraphics = null;
+    partTexture = null;
+    waveGraphics = new PIXI.Graphics();
+    waveGraphics.cacheAsBitmap = true;
+    waveGraphics.beginFill('0x' + tinycolor('hsl(200, 74%, 40%)').toHex(), 0.15);
+    waveGraphics.drawCircle(0, 0, 20);
+    waveGraphics.endFill();
+    waveTexture = waveGraphics.generateTexture();
+    partGraphics = new PIXI.Graphics();
+    partGraphics.cacheAsBitmap = true;
+    partGraphics.beginFill('0x' + tinycolor('hsl(200, 70%, 40%)').toHex(), 0.2);
+    partGraphics.drawCircle(0, 0, 15);
+    partGraphics.endFill();
+    partTexture = partGraphics.generateTexture();
+  }
