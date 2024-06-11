@@ -1,0 +1,14 @@
+void CloneStyles(HtmlControl obj, HtmlControl newobj)
+{
+                IEnumerator keys = obj.Style.Keys.GetEnumerator();
+                while (keys.MoveNext())
+                {
+                    String key = (String)keys.Current; newobj.Style[key] = obj.Style[key];
+                }
+                IEnumerator keys2 = obj.Attributes.Keys.GetEnumerator();
+                while (keys2.MoveNext())
+                {
+                    String key = (String)keys2.Current; newobj.Attributes[key] = obj.Attributes[key];
+                }
+ 
+}
