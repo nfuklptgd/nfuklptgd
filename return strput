@@ -1,0 +1,24 @@
+    public bool IsInt(string value)
+        {
+                 return Regex.IsMatch(value, @"^[+-]?\d*$");
+        }
+        public bool IsUnsign(string value)
+        {
+                 return Regex.IsMatch(value, @"^\d*[.]?\d*$");
+        }
+         public  bool isTel(string strInput)
+        {
+                return Regex.IsMatch(strInput, @"\d{3}-\d{8}|\d{4}-\d{7}");
+        }
+        public bool IsDate(string value)
+        {
+            try
+            {
+                DateTime.Parse(value);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
