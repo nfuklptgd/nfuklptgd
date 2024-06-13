@@ -1,0 +1,12 @@
+ 
+void CenterMan::slotSendDownMsg(u32 app_id, u32 dev_sn, u8 pack_num, u8 msg_type, u8 *msg_buff, u16 msg_len)
+{
+    //    qDebug()<<"slotSendDownMsg****";
+        u8 data_buff[1500]={0}, make_buff[1500]={0};
+        u16 make_len, data_len;
+        data_len=msg_len;
+        if(msg_len>sizeof(data_buff))
+        {
+            qDebug()<<"slotSendDownMsg error, msg_len>sizeof(data_buff)";
+            return;
+        }
