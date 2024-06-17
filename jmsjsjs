@@ -1,0 +1,23 @@
+ <view class="kill-rightBox">
+    <view class="just-text">距秒杀结束仅剩</view>
+    <view class="kill-timeBox">
+      <view class="clockBox margin-one displayBox">{{hour}}</view>
+      <view class="littleClock">:</view>
+      <view class="clockBox displayBox">{{min}}</view>
+      <view class="littleClock">:</view>
+      <view class="clockBox displayBox">{{second}}</view>
+    </view>
+  </view>
+</view>
+<!-- 商品名称 -->
+<view class="productName-box littleTwo">
+  超级无敌好吃美味烤鸭
+</view>
+<!-- 商品描述 -->
+<view class="productDesc-box littleTwo">
+  色泽红艳，肉质细嫩，味道醇厚，肥而不腻
+</view>
+<!-- 分享奖励 -->
+<view class="productShare-money" bindtap="shareProduct">
+  <view class="left-Share">
+    <text>该商品分享可得奖励￥10</text>
