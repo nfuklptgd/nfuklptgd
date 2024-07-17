@@ -1,0 +1,35 @@
+    def swap(self, group):  
+        """在棋盘上交换两个选定的动物。"""  
+        last_sprite = None  
+        selected_sprite = None  
+        if self.swap_sign == -1:  # 尚未交换  
+            self.last_sel = self.selected  
+        if self.swap_sign == 1:  
+            last_x, last_y = Manager.rc_xy(self.last_sel[0], self.last_sel[1])  
+            sel_x, sel_y = Manager.rc_xy(self.selected[0], self.selected[1])  
+            if self.last_sel[0] == self.selected[0]:  # 纵向交换  
+                for animal_list in group:  
+                    if animal_list.rect.topleft == (last_x, last_y):  
+                        last_sprite = animal_list  
+                        last_sprite.speed = [self.selected[1] - self.last_sel[1], 0]  
+                    elif animal_list.rect.topleft == (sel_x, sel_y):  
+                        selected_sprite = animal_list  
+                        selected_sprite.speed = [self.last_sel[1] - self.selected[1], 0]  
+            else:  # 横向交换  
+                for animal_list in group:  
+                    if animal_list.rect.topleft == (last_x, last_y):  
+                        last_sprite = animal_list  
+                        last_sprite.speed = [0, self.selected[0] - self.last_sel[0]]  
+                    elif animal_list.rect.topleft == (sel_x, sel_y):  
+                        selected_sprite = animal_list  
+                        selected_sprite.speed = [0, self.last_sel[0] - self.selected[0]]  
+            while last_sprite and last_sprite.speed != [0, 0]:  
+                delay(5)  
+                self.draw_brick(last_x, last_y)  
+                self.draw_brick(sel_x, sel_y)  
+                last_sprite.move(last_sprite.speed)  
+                selected_sprite.move(selected_sprite.speed)  
+                self.screen.blit(last_sprite.image, last_sprite.rect)  
+                self.screen.blit(selected_sprite.image, selected_sprite.rect)  
+                pygame.display.flip()  
+  
